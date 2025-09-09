@@ -20,11 +20,11 @@ export default function PostsPage() {
   console.log("data is: ", posts);
 
   return (
-    <div>
+    <div className="w-full container gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto p-3 bg-slate-50">
       {posts.map((post) => (
-        <div key={post.id}>
-          <p>{post.title}</p>
-          <p>{post.body}</p>
+        <div key={post.id} className="bg-white w-full h-full max-h-[700px] rounded-lg p-2 shadow-md" >
+          <h2 className="font-semibold text-lg line-clamp-1 text-gray-300 text-ellipsis">{post.title}</h2>
+          <p className="text-sm line-clamp-3 text-ellipsis">{post.body}</p>
         </div>
       ))}
     </div>
