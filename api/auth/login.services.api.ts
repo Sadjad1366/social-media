@@ -1,5 +1,5 @@
 import { ILoginReq, ILoginRes } from "@/types";
-import { client } from "./client";
+import { client } from "../_config/client";
 import { URLS } from "@/urls";
 
 type LoginFuncType = ({

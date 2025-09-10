@@ -1,6 +1,6 @@
 // import { GeneralApiResponse } from "./globals";
 
-// export type GetPostsTypeRes = GeneralApiResponse<{
+// export type GetAllPostsTypeRes = GeneralApiResponse<{
 //   id: number;
 //   title: string;
 //   body: string;
@@ -13,7 +13,7 @@
 //   userId: number;
 // }>;
 
-export type GetPostsTypeRes = {
+export type GetAllPostsTypeRes = {
   posts: {
     id: number;
     title: string;
@@ -29,6 +29,19 @@ export type GetPostsTypeRes = {
   total: number;
   skip: number;
   limit: number;
+};
+
+export type GetPostById = {
+  id: number;
+  title: string;
+  body: string;
+  tags: string[];
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
+  views: number;
+  userId: number;
 };
 
 //==================== Login ============================
