@@ -1,7 +1,7 @@
 "use client";
 import { loginForm } from "@/api/auth/login.services.api";
-import { ButtonKit } from "@/components/button";
-import { InputKit } from "@/components/input";
+import { ButtonKit } from "@/components/kit/button";
+import { InputKit } from "@/components/kit/input";
 import { ILoginReq } from "@/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
