@@ -1,6 +1,7 @@
 "use client";
 
 import { getPostsApi } from "@/api/posts/post.services.api";
+import { ButtonKit } from "@/components/kit/button";
 import { PostCard } from "@/components/post/post-card";
 import { classNames } from "@/utils/classname";
 import { useQuery } from "@tanstack/react-query";
@@ -23,19 +24,22 @@ export default function PostsPage() {
   };
 
   return (
-    <div
-      className={classNames(
-        "w-full container grid gap-4",
-        "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-        "mx-auto p-3 bg-slate-50"
-      )}
-    >
-      {posts.map((post) => (
-        <PostCard
-          key={post.id} 
-          post={{ ...post, onClickFunc: onClickHandler }}
-        />
-      ))}
-    </div>
+    <>
+      <ButtonKit className="m-3 p-2 text-white bg-blue-400" content="CREATE POST" />
+      <div
+        className={classNames(
+          "w-full container grid gap-4",
+          "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+          "mx-auto p-3 bg-slate-50"
+        )}
+      >
+        {posts.map((post) => (
+          <PostCard
+            key={post.id}
+            post={{ ...post, onClickFunc: onClickHandler }}
+          />
+        ))}
+      </div>
+    </>
   );
 }

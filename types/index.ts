@@ -63,4 +63,26 @@ export interface ILoginRes {
   refreshToken: string; // refreshToken in response and cookies
 }
 
-//====================  ============================
+//==================== CREATE POST REQ ============================
+export type CreatePostReq = {
+  id: number;
+  title: string;
+  body: string;
+  // tags: string[];
+   userId: number;
+};
+
+//==================== CREATE POST REQ ============================
+export type CreatePostRes = {
+ id: number;
+  title: string;
+  body: string;
+  tags: string[];
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
+  views: number;
+  userId: number;
+};
+
