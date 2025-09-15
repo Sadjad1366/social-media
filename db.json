@@ -1,1 +1,136 @@
-{}
+{
+  "posts": [
+    {
+      "id": "0a03",
+      "title": "qwe",
+      "body": "aaasssdddd",
+      "userId": 1
+    },
+    {
+      "id": "033f",
+      "title": "love",
+      "body": "I have someone",
+      "userId": 1,
+      "tags": [],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "8678",
+      "title": "aaa",
+      "body": "asda",
+      "userId": 1,
+      "tags": [
+        "apple"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "e5dc",
+      "title": "aaa",
+      "body": "sss",
+      "userId": 1,
+      "tags": [
+        "apple",
+        "banana",
+        "orange"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "bbb7",
+      "title": "hello",
+      "body": "I hate ",
+      "userId": 1,
+      "tags": [
+        "apple",
+        "banana"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "f2f0",
+      "title": "asa",
+      "body": "qazwsx",
+      "userId": 1,
+      "tags": [],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "2472",
+      "title": "qwe",
+      "body": "qwe",
+      "userId": 1,
+      "tags": [
+        "apple",
+        "banana"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "1dc2",
+      "title": "hello",
+      "body": "how r u",
+      "userId": 1,
+      "tags": [
+        "orange"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "0aae",
+      "title": "",
+      "body": "dfdsfsdfsfdsdfsfdsfdsdfsdfsdfsddfsfds",
+      "userId": 1,
+      "tags": [
+        "banana"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    },
+    {
+      "id": "c704",
+      "title": "mutation",
+      "body": "mutationmutationmutationmutationmutation",
+      "userId": 1,
+      "tags": [
+        "orange"
+      ],
+      "reactions": {
+        "likes": 0,
+        "dislikes": 0
+      },
+      "views": 0
+    }
+  ]
+}

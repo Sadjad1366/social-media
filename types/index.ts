@@ -64,13 +64,25 @@ export interface ILoginRes {
 }
 
 //==================== CREATE POST REQ ============================
+// export type CreatePostReq = {
+//   title: string;
+//   body: string;
+//   // tags: string[];
+//    userId: number;
+// };
+
 export type CreatePostReq = {
-  id: number;
   title: string;
   body: string;
-  // tags: string[];
-   userId: number;
+  userId: number;
+  tags?: string[];
+  reactions?: {
+    likes: number;
+    dislikes: number;
+  };
+  views?: number;
 };
+
 
 //==================== CREATE POST REQ ============================
 export type CreatePostRes = {

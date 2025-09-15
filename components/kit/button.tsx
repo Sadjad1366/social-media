@@ -5,7 +5,7 @@ interface IButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  content: string;
+  content?: string;
 }
 
 export const ButtonKit: React.FC<IButtonProps> = ({

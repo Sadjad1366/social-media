@@ -25,7 +25,7 @@ export default function PostsPage() {
 
   return (
     <>
-      <ButtonKit className="m-3 p-2 text-white bg-blue-400" content="CREATE POST" />
+      <ButtonKit content="CREATE POST" onClick={() => router.push('/posts/create-post') } className="m-3 p-2 text-white bg-blue-400"/>
       <div
         className={classNames(
           "w-full container grid gap-4",
