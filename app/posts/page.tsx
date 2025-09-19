@@ -3,12 +3,15 @@
 import { getPostsApi } from "@/api/posts/post.services.api";
 import { ButtonKit } from "@/components/kit/button";
 import { PostCard } from "@/components/post/post-card";
+import { GetAllPostsTypeRes } from "@/types";
 import { classNames } from "@/utils/classname";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
 export default function PostsPage() {
   const router = useRouter();
+
+type PostType = GetAllPostsTypeRes['posts'][number]
 
   const { data, isLoading } = useQuery({
     queryKey: ["posts"],
@@ -17,7 +20,7 @@ export default function PostsPage() {
 
   if (isLoading) return <>Loading...</>;
 
-  const posts = data?.posts ?? [];
+  const posts = data ?? [];
 
   const onClickHandler = (id: number) => {
     router.push(`/posts/${id}`);
@@ -33,7 +36,7 @@ export default function PostsPage() {
           "mx-auto p-3 bg-slate-50"
         )}
       >
-        {posts.map((post) => (
+        {posts.map((post:PostType) => (
           <PostCard
             key={post.id}
             post={{ ...post, onClickFunc: onClickHandler }}

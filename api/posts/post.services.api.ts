@@ -1,14 +1,43 @@
 import { URLS } from "@/urls"
 import { CreatePostReq, CreatePostRes, GetAllPostsTypeRes, GetPostById } from "@/types";
-import { client } from "../_config/client";
+import { client, localClient } from "../_config/client";
 
 
 
 //========================= GET ALL POSTS ===================
+// type GetPostApiFuncType = () => Promise<GetAllPostsTypeRes>
+
+// export const getPostsApi:GetPostApiFuncType = async () => {
+//    const response = await client.get(URLS.posts.getPosts());   
+//    return response.data;
+// }
+
+//========================= GET A SINGLE POST ===================
+
+// type GetPostByIdApiFuncType = (id:number) => Promise<GetPostById>
+
+// export const getPostByIdApi:GetPostByIdApiFuncType = async(id) => {
+//    const response = await client.get(URLS.posts.getSinglePost(id));
+//    return response.data
+// }
+
+//========================= CREATE A POST ===================
+type CreatePostFuncType = (body:CreatePostReq) => Promise<CreatePostRes>
+
+export const createPostApi:CreatePostFuncType = async(body) => {
+   const response = await localClient.post(URLS.posts.getPosts(),body)
+     console.log('Post created:', response.data);
+   return response.data;
+}
+
+
+//========================= GET ALL MY POSTS ===================
 type GetPostApiFuncType = () => Promise<GetAllPostsTypeRes>
 
 export const getPostsApi:GetPostApiFuncType = async () => {
-   const response = await client.get(URLS.posts.getPosts());   
+   const response = await localClient.get(URLS.posts.getPosts());  
+   console.log("posts are fetched", response.data);
+    
    return response.data;
 }
 
@@ -17,15 +46,6 @@ export const getPostsApi:GetPostApiFuncType = async () => {
 type GetPostByIdApiFuncType = (id:number) => Promise<GetPostById>
 
 export const getPostByIdApi:GetPostByIdApiFuncType = async(id) => {
-   const response = await client.get(URLS.posts.getSinglePost(id));
+   const response = await localClient.get(URLS.posts.getSinglePost(id));
    return response.data
-}
-
-//========================= CREATE A POST ===================
-type CreatePostFuncType = (body:CreatePostReq) => Promise<CreatePostRes>
-
-export const createPostApi:CreatePostFuncType = async(body) => {
-   const response = await client.post('http://localhost:3000/posts',body)
-     console.log('Post created:', response.data);
-   return response.data;
 }
