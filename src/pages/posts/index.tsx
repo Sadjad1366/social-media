@@ -14,7 +14,7 @@ const PostsPage = () => {
   console.log(data?.posts);
 
   return (
-    <div className="p-2 grid grid-cols-4 gap-3">
+    <div className="p-2 grid sm:grid-cols-2 xl:grid-cols-4 gap-3">
       {dataSource?.map((post) => (
         <div
           className="bg-slate-200 flex flex-col rounded-md shadow-lg p-2"
