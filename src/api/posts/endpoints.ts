@@ -1,4 +1,6 @@
 export const endpoints = {
-    getAll: '/posts',
-    postDetail: (id: number) => `/posts/${id}`
+    getAllPosts:() => '/posts',
+    postDetail: (id: number) => `/posts/${id}`,
+    createPost: () => '/posts/add',
+
 }

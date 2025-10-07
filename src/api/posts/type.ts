@@ -1,4 +1,4 @@
-export type PostResponse = {
+export type AllPostsResponse = {
   posts: {
     id: number;
     title: string;
@@ -16,8 +16,26 @@ export type PostResponse = {
   limit: number;
 };
 
-
 export type PostDetailRes = {
+  id: number;
+  title: string;
+  body: string;
+  tags: string[];
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
+  views: number;
+  userId: number;
+};
+
+export type CreatePostReq = {
+  title: string;
+  body: string;
+  tags: string[];
+};
+
+export type CreatePostRes = {
   id: number;
   title: string;
   body: string;

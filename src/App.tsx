@@ -7,6 +7,7 @@ import LoginPage from "./pages/login";
 import PostsPage from "./pages/posts";
 import PostDetailPage from "./pages/post-detail";
 import PostLayOut from "./components/post-layout";
+import CreatePostPage from "./pages/create-post";
 
 function App() {
   const browserRouter = createBrowserRouter([
@@ -26,7 +27,7 @@ function App() {
       children: [
         { index: true, Component: PostsPage },
         { path: ":id", Component: PostDetailPage },
-        // { path: "contact-us", Component: ContactUsPage },
+        { path: "create-post", Component: CreatePostPage },
       ],
     },
   ]);

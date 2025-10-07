@@ -1,15 +1,18 @@
 import client from "../_config/client";
 import { endpoints } from "./endpoints";
-import type { PostDetailRes, PostResponse } from "./type";
+import type { PostDetailRes, AllPostsResponse, CreatePostReq, CreatePostRes } from "./type";
 
-type GetAllPostsFuncType = () => Promise<PostResponse>;
-export const getPosts: GetAllPostsFuncType = async () => {
-  const response = await client.get(endpoints.getAll);
+export const getPosts = async () => {
+  const response = await client.get<AllPostsResponse>(endpoints.getAllPosts());
   return response.data;
 };
 
-type GetPostDetailFuncType = (id: number) => Promise<PostDetailRes>;
-export const getPostDetail:GetPostDetailFuncType = async(id) => {
-  const response = await client.get(endpoints.postDetail(id));
+export const getPostDetail = async(id:number) => {
+  const response = await client.get<PostDetailRes>(endpoints.postDetail(id));
   return response.data
+}
+
+export const createPost = async(payload: CreatePostReq) => {
+  const response = await client.post<CreatePostRes>(endpoints.createPost(), payload);
+  return response.data;
 }
