@@ -17,12 +17,15 @@ const CreatePostPage = () => {
     title: "",
     body: "",
     tags: [],
+    userId: 5,
   });
 
   const mutation = useMutation({
     mutationFn: (payload: CreatePostReq) => createPost(payload),
-    onSuccess: () => {
-      setValues({ title: "", body: "", tags: [] });
+    onSuccess: (data) => {
+      setValues({ title: "", body: "", tags: [], userId: 5 });
+      console.log('data is:', data);
+      
     },
   });
 

@@ -33,6 +33,7 @@ export type CreatePostReq = {
   title: string;
   body: string;
   tags: string[];
+  userId: number;
 };
 
 export type CreatePostRes = {

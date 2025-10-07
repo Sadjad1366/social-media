@@ -1,15 +1,14 @@
+import { useMutation } from "@tanstack/react-query";
 import React from "react";
 import { useNavigate } from "react-router";
-
-type LoginRequest = {
-  username: string;
-  password: string;
-};
+import type { loginReq } from "../../api/auth/type";
+import { loginAction } from "../../api/auth/login-api";
 
 const LoginPage = () => {
-  const [values, setValues] = React.useState<LoginRequest>({
+  const [values, setValues] = React.useState<loginReq>({
     username: "",
     password: "",
+    expiresInMins: 60,
   });
 
   const navigate = useNavigate();
@@ -19,9 +18,18 @@ const LoginPage = () => {
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  const mutation = useMutation({
+    mutationFn: (payload: loginReq) => loginAction(payload),
+    onSuccess: (data) => {
+      setValues({ username: "", password: "" });
+      console.log('response is:',data )
+    },
+  });
+
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/posts')
+    mutation.mutate(values);
+    navigate("/posts");
   };
   return (
     <>
