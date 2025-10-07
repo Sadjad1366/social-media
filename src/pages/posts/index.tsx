@@ -1,11 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPosts } from "../../api/posts/post-api";
+import { useNavigate } from "react-router";
 
 const PostsPage = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
   });
+
+  const navigate = useNavigate()
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -16,7 +19,7 @@ const PostsPage = () => {
   return (
     <div className="p-2 grid sm:grid-cols-2 xl:grid-cols-4 gap-3">
       {dataSource?.map((post) => (
-        <div
+        <div onClick={() => navigate(`/posts/${post.id}`)}
           className="bg-slate-200 flex flex-col rounded-md shadow-lg p-2"
           key={post.id}
         >

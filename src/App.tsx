@@ -5,6 +5,8 @@ import AboutPage from "./pages/about";
 import ContactUsPage from "./pages/contact-us";
 import LoginPage from "./pages/login";
 import PostsPage from "./pages/posts";
+import PostDetailPage from "./pages/post-detail";
+import PostLayOut from "./components/post-layout";
 
 function App() {
   const browserRouter = createBrowserRouter([
@@ -20,9 +22,10 @@ function App() {
     },
     {
       path: "/posts",
+            Component: PostLayOut,
       children: [
         { index: true, Component: PostsPage },
-        // { path: "about", Component: AboutPage },
+        { path: ":id", Component: PostDetailPage },
         // { path: "contact-us", Component: ContactUsPage },
       ],
     },
