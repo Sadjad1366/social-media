@@ -14,7 +14,6 @@ const PostsPage = () => {
 
   const dataSource = data?.posts || [];
 
-  console.log(data?.posts);
 
   return (
     <>
